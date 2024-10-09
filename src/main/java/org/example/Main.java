@@ -1,10 +1,17 @@
 package org.example;
+import exceptions.NegativeHeightException;
+import exceptions.NegativeRadiusException;
+import exceptions.NegativeSideException;
+import geometry2d.Circle;
+import geometry2d.Rectangle;
+import geometry3d.Cylinder;
+
 import java.util.List;
 import java.util.ArrayList;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativeRadiusException, NegativeSideException, NegativeHeightException {
 // Задание 1
         System.out.println("\nЗадание 1");
         Button button = new Button();
@@ -79,7 +86,21 @@ public class Main {
         // Читаем значение из ячейки
         System.out.println("Значение в ячейке (1, 2): " + table.getValue(1, 2));
 
+// Задание 6
+        System.out.println("\n Задание 6");
+        Circle circle = new Circle(5);
+        System.out.println(circle.toString());
+        System.out.println("Площадь: " + circle.area());
+        System.out.println("Периметр: " + circle.perimeter());
 
+        Rectangle rectangle = new Rectangle(3, 4);
+        System.out.println(rectangle.toString());
+        System.out.println("Площадь: " + rectangle.area());
+        System.out.println("Периметр: " + rectangle.perimeter());
+
+        Cylinder cylinder = new Cylinder(circle, 10);
+        System.out.println(cylinder.toString());
+        System.out.println("Объем: " + cylinder.volume());
     }
 }
 

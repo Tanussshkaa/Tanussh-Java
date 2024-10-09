@@ -1,10 +1,12 @@
 package geometry2d;
 
+import exceptions.NegativeSideException;
+
 public class Rectangle implements Figure {
     private double width;
     private double height;
 
-    public Rectangle(double width, double height) {
+    public Rectangle(double width, double height) throws NegativeSideException {
         if (width <= 0 || height <= 0) {
             throw new NegativeSideException("Ширина и высота должны быть положительными");
         }
